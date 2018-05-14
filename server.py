@@ -63,6 +63,7 @@ def requires_auth(f):
     def decorated(*args, **kwargs):
         if constants.PROFILE_KEY not in session:
             return redirect('/login')
+        print("auth success")
         return f(*args, **kwargs)
 
     return decorated
